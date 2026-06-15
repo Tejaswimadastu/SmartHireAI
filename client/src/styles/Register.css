@@ -1,0 +1,46 @@
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    #10b981,
+    #059669
+  );
+}
+
+.register-card {
+  width: 500px;
+  padding: 40px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.95
+  );
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 40px rgba(
+      0,
+      0,
+      0,
+      0.2
+    );
+}
+
+.register-card h1 {
+  color: #059669;
+}
+
+.register-card .btn-success {
+  border: none;
+}
+
+.form-control {
+  height: 50px;
+}

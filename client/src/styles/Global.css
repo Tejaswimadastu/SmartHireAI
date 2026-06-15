@@ -1,0 +1,46 @@
+.card {
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.nav-link:hover {
+  color: #fbbf24 !important;
+}
+
+.btn {
+  border-radius: 12px;
+}
+
+body {
+  overflow-x: hidden;
+}
+.dark-mode {
+  background: #0f172a;
+  color: white;
+}
+
+.dark-mode .card {
+  background: #1e293b;
+  color: white;
+}
+
+.dark-mode .navbar {
+  background: #111827 !important;
+}
+
+.dark-mode .form-control {
+  background: #1e293b;
+  color: white;
+  border: 1px solid #334155;
+}
+
+.dark-mode .form-control::placeholder {
+  color: #cbd5e1;
+}
+
+.dark-mode footer {
+  background: #020617 !important;
+}
