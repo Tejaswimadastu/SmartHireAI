@@ -13,7 +13,7 @@ function RecruiterProfile() {
 
   const fetchJobs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/jobs");
+      const res = await axios.get("/api/jobs");
       const recruiterJobs = res.data.filter(job => job.postedBy === user.id || job.postedBy?._id === user.id);
       setJobCount(recruiterJobs.length);
     } catch (err) {

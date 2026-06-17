@@ -26,7 +26,7 @@ function ProctorReport() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.get(
-        `http://localhost:5000/api/interview/session/candidate/${candidateId}`,
+        `/api/interview/session/candidate/${candidateId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`

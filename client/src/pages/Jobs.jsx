@@ -17,7 +17,7 @@ function Jobs() {
 
   const fetchJobs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/jobs");
+      const res = await axios.get("/api/jobs");
       setJobs(res.data);
     } catch (error) {
       console.log(error);
@@ -28,7 +28,7 @@ function Jobs() {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        `http://localhost:5000/api/applications/${jobId}`,
+        `/api/applications/${jobId}`,
         {},
         {
           headers: {
@@ -49,7 +49,7 @@ function Jobs() {
       setMatchingJobTitle(jobTitle);
       const token = localStorage.getItem("token");
       const res = await axios.get(
-        `http://localhost:5000/api/ai/match/${jobId}`,
+        `/api/ai/match/${jobId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`

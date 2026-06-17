@@ -1,4 +1,14 @@
 {
+  "name": "smarthireai",
+  "version": "1.0.0",
+  "scripts": {
+    "install-all": "npm install && npm install --prefix client && npm install --prefix server",
+    "build-client": "npm run build --prefix client",
+    "start": "node server/server.js",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
   "dependencies": {
     "axios": "^1.17.0",
     "bcryptjs": "^3.0.3",
@@ -6,5 +16,8 @@
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.7.0",
     "react-router-dom": "^7.17.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }

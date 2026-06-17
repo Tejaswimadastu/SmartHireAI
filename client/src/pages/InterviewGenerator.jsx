@@ -436,7 +436,7 @@ function InterviewGenerator() {
         // Fetch AI customized questions
         const token = localStorage.getItem("token");
         const res = await axios.get(
-          "http://localhost:5000/api/interview/questions",
+          "/api/interview/questions",
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -583,7 +583,7 @@ function InterviewGenerator() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:5000/api/interview/evaluate",
+        "/api/interview/evaluate",
         { question: qText, answer: ansText },
         {
           headers: {
@@ -659,7 +659,7 @@ function InterviewGenerator() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:5000/api/interview/session",
+        "/api/interview/session",
         payload,
         {
           headers: {
@@ -682,7 +682,7 @@ function InterviewGenerator() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.get(
-        "http://localhost:5000/api/interview/session/history",
+        "/api/interview/session/history",
         {
           headers: {
             Authorization: `Bearer ${token}`

@@ -14,7 +14,7 @@ function MyApplications() {
   const fetchApplications = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/applications/my", {
+      const res = await axios.get("/api/applications/my", {
         headers: {
           Authorization: `Bearer ${token}`
         }

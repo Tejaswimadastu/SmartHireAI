@@ -22,7 +22,7 @@ function Admin() {
 
   const fetchJobs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/jobs");
+      const res = await axios.get("/api/jobs");
       const user = JSON.parse(localStorage.getItem("user")) || {};
       // Filter jobs posted by this recruiter
       const recruiterJobs = res.data.filter(job => job.postedBy === user.id || job.postedBy?._id === user.id);
@@ -46,7 +46,7 @@ function Admin() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/jobs",
+        "/api/jobs",
         {
           ...formData,
           skills: formData.skills

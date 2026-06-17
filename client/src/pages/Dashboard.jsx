@@ -42,7 +42,7 @@ function Dashboard() {
 
   const fetchJobs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/jobs");
+      const res = await axios.get("/api/jobs");
       setJobs(res.data.slice(0, 4));
     } catch (error) {
       console.log(error);
@@ -52,7 +52,7 @@ function Dashboard() {
   const fetchDashboard = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/dashboard/user", {
+      const res = await axios.get("/api/dashboard/user", {
         headers: {
           Authorization: `Bearer ${token}`
         }
