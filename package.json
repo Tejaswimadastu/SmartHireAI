@@ -2,7 +2,7 @@
   "name": "smarthireai",
   "version": "1.0.0",
   "scripts": {
-    "install-all": "npm install && npm install --prefix client && npm install --prefix server",
+    "install-all": "npm install && npm install --prefix client --include=dev && npm install --prefix server",
     "build-client": "npm run build --prefix client",
     "start": "node server/server.js",
     "server": "npm run dev --prefix server",
