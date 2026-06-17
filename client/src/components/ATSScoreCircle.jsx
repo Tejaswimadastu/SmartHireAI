@@ -12,7 +12,7 @@ function ATSScoreCircle({
   return (
     <div
       style={{
-        width: 180,
+        width: 150,
         margin: "auto"
       }}
     >
@@ -20,18 +20,19 @@ function ATSScoreCircle({
         value={score}
         text={`${score}%`}
         styles={buildStyles({
-          textSize: "16px",
-          pathColor: "#4f46e5",
-          textColor: "#111827",
-          trailColor: "#e5e7eb"
+          textSize: "18px",
+          pathColor: "var(--primary)",
+          textColor: "var(--text-main)",
+          trailColor: "var(--card-border)"
         })}
       />
 
-      <h5
-        className="text-center mt-3"
+      <h6
+        className="text-center mt-3 fw-bold"
+        style={{ color: "var(--text-main)" }}
       >
         {title}
-      </h5>
+      </h6>
     </div>
   );
 }

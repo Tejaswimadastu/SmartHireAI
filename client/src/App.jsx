@@ -26,6 +26,7 @@ import ResumeReport from "./pages/ResumeReport";
 import Profile from "./pages/Profile";
 import Admin from "./pages/Admin";
 import InterviewGenerator from "./pages/InterviewGenerator";
+import ProctorReport from "./pages/ProctorReport";
 
 function AppContent() {
   const location = useLocation();
@@ -148,6 +149,15 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <Applicants />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/proctor-report/:candidateId"
+          element={
+            <ProtectedRoute>
+              <ProctorReport />
             </ProtectedRoute>
           }
         />

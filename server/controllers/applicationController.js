@@ -1,4 +1,9 @@
 const Application = require("../models/Application");
+const User = require("../models/User");
+const Job = require("../models/Job");
+const pdfParse = require("pdf-parse");
+const fs = require("fs");
+const path = require("path");
 
 // Apply Job
 const applyJob = async (req, res) => {
@@ -16,11 +21,42 @@ const applyJob = async (req, res) => {
       });
     }
 
+    const user = await User.findById(req.user.id);
+    const job = await Job.findById(req.params.jobId);
+    let computedAts = 0;
+
+    if (user && user.resume && job) {
+      try {
+        const pdfPath = path.join(__dirname, "..", "uploads", user.resume);
+        if (fs.existsSync(pdfPath)) {
+          const pdfBuffer = fs.readFileSync(pdfPath);
+          const pdfData = await pdfParse(pdfBuffer);
+          const resumeText = pdfData.text.toLowerCase();
+
+          const jobSkills = (job.skills || []).map(s => s.toLowerCase().trim());
+          if (jobSkills.length > 0) {
+            let matched = 0;
+            jobSkills.forEach(skill => {
+              if (resumeText.includes(skill)) {
+                matched++;
+              }
+            });
+            computedAts = Math.round((matched / jobSkills.length) * 100);
+          } else {
+            computedAts = 50; // default if no specific job skills are requested
+          }
+        }
+      } catch (err) {
+        console.error("Failed to parse resume for application ATS score:", err);
+      }
+    }
+
     const application =
       await Application.create({
         job: req.params.jobId,
         applicant: req.user.id,
-        status: "Applied"
+        status: "Applied",
+        atsScore: computedAts
       });
 
     res.status(201).json(application);

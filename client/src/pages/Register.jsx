@@ -6,7 +6,8 @@ function Register() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    password: ""
+    password: "",
+    role: "jobseeker"
   });
 
   const navigate = useNavigate();
@@ -70,6 +71,7 @@ function Register() {
               name="name"
               className="form-control"
               placeholder="Enter Full Name"
+              value={formData.name}
               onChange={handleChange}
               required
             />
@@ -87,6 +89,7 @@ function Register() {
               name="email"
               className="form-control"
               placeholder="Enter Email"
+              value={formData.email}
               onChange={handleChange}
               required
             />
@@ -104,14 +107,65 @@ function Register() {
               name="password"
               className="form-control"
               placeholder="Create Password"
+              value={formData.password}
               onChange={handleChange}
               required
             />
 
           </div>
 
+          <div className="mb-4">
+
+            <label className="form-label">
+              Join Us As A
+            </label>
+
+            <div className="row g-2">
+
+              <div className="col-6">
+
+                <button
+                  type="button"
+                  className={`btn w-100 py-2 ${
+                    formData.role === "jobseeker"
+                      ? "btn-primary"
+                      : "btn-outline-secondary"
+                  }`}
+                  onClick={() =>
+                    setFormData({ ...formData, role: "jobseeker" })
+                  }
+                  style={{ fontSize: "14px" }}
+                >
+                  🔍 Job Seeker
+                </button>
+
+              </div>
+
+              <div className="col-6">
+
+                <button
+                  type="button"
+                  className={`btn w-100 py-2 ${
+                    formData.role === "recruiter"
+                      ? "btn-primary"
+                      : "btn-outline-secondary"
+                  }`}
+                  onClick={() =>
+                    setFormData({ ...formData, role: "recruiter" })
+                  }
+                  style={{ fontSize: "14px" }}
+                >
+                  💼 Recruiter
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
           <button
-            className="btn btn-success w-100"
+            className="btn btn-success w-100 py-2"
           >
             Create Account
           </button>
@@ -120,13 +174,13 @@ function Register() {
 
         <div className="text-center mt-4">
 
-          <p>
+          <p className="mb-2">
             Already have an account?
           </p>
 
           <Link
             to="/login"
-            className="btn btn-outline-primary"
+            className="btn btn-outline-primary w-100"
           >
             Login
           </Link>

@@ -71,6 +71,12 @@ const getUserDashboard = async (
       atsScore:
         user.atsScore || 0,
 
+      skills:
+        user.skills || [],
+
+      missingSkills:
+        user.missingSkills || [],
+
       applications,
 
       interviews:

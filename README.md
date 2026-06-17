@@ -1,63 +1,32 @@
-# SmartHireAI
-# 🚀 SmartHire AI
+# SmartHire AI 🚀
 
-SmartHire AI is an AI-powered Resume Screening and Job Matching Platform built using the MERN Stack. It helps job seekers analyze resumes, calculate ATS scores, find suitable jobs, generate interview questions, and enables recruiters to manage job postings and applicants efficiently.
+SmartHire AI is an AI-powered Resume Screening, Job Matching, and Proctoring Assessment Platform built using the MERN Stack. It helps job seekers calculate ATS scores, match resumes to open roles, and practice realistic mock interviews under webcam proctor monitoring. It also enables recruiters to publish job openings, rank applicants, and review candidate assessment transcripts and security violation logs.
 
 ---
 
 ## ✨ Features
 
-### 👨‍💼 Job Seeker Features
-
-* User Registration & Login
-* Resume Upload (PDF)
-* AI Resume Analysis
-* ATS Score Calculation
-* Resume-Based Job Matching
-* AI Interview Question Generator
-* Job Search & Applications
-* Application Tracking Dashboard
-* Candidate Ranking
-* Personal Profile Management
+### 👨‍💼 Candidate Features
+* **Resume Upload & AI Parsing**: Scan resumes to extract technical skills and recommend matching developer roles.
+* **ATS Compatibility Score**: Compute fit percentages matching backgrounds against job description requirements.
+* **AI Mock Interview Sandbox**:
+  * Practice Technical, DSA, System Design, Behavioral, or HR questions.
+  * Live camera/mic test panels preloading client-side TensorFlow.js libraries.
+  * Split-screen video interview portal with live timers and real-time Speech-to-Text transcriptions.
+  * **Integrity Proctoring system**: Automatically logs warning events (cell phone usage, candidate out-of-frame, tab switching, copy-paste) and captures evidence screenshots.
+  * **Cumulative Scorecard**: Play recorded mock videos, view AI performance feedback, and review proctor violation galleries.
 
 ### 🏢 Recruiter Features
-
-* Recruiter Authentication
-* Post New Jobs
-* View Applicants
-* ATS-Based Candidate Ranking
-* Application Status Management
-* Recruiter Dashboard
+* **Requisition Workspace**: Post developer vacancies and manage candidates.
+* **ATS-Based Applicant Rankings**: Rank applicants by suitability scores.
+* **Proctor Assessment Scorecards**: Inspect candidate responses, violation counts, and proctoring screenshots side-by-side.
 
 ---
 
 ## 🛠 Tech Stack
 
-### Frontend
-
-* React.js
-* React Router DOM
-* Bootstrap 5
-* Recharts
-* Axios
-* React Icons
-
-### Backend
-
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT Authentication
-* Multer
-* PDF-Parse
-
-### AI Features
-
-* Resume Skill Extraction
-* ATS Score Analysis
-* Resume Matching
-* Interview Question Generation
+* **Frontend**: React.js, React Router DOM, Bootstrap 5, TensorFlow.js (COCO-SSD), MediaRecorder API, Web Speech API, Recharts, Axios, React Icons
+* **Backend**: Node.js, Express.js, MongoDB, Mongoose, JWT, Multer, PDF-Parse, Google Generative AI (Gemini)
 
 ---
 
@@ -86,95 +55,45 @@ SmartHireAI/
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Installation & Setup
 
-### Clone Repository
-
+### 1. Clone Repository
 ```bash
 git clone https://github.com/Tejaswimadastu/SmartHireAI.git
 cd SmartHireAI
 ```
 
----
-
-### Backend Setup
-
+### 2. Backend Server Setup
 ```bash
 cd server
 npm install
 ```
-
-Create `.env`
-
+Create a `.env` file in the `server` directory:
 ```env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
+GEMINI_API_KEY=your_gemini_api_key
 ```
-
-Run Backend
-
+Start the server:
 ```bash
 npm start
 ```
 
----
-
-### Frontend Setup
-
+### 3. Frontend Client Setup
 ```bash
-cd client
+cd ../client
 npm install
 npm run dev
 ```
-
----
-
-## 🎯 Core Modules
-
-### Resume Analyzer
-
-* Extracts skills from uploaded resumes
-* Calculates Resume Score
-* Suggests missing skills
-* Recommends suitable job roles
-
-### ATS Matcher
-
-* Compares resume skills with job requirements
-* Calculates ATS Match Percentage
-* Provides hiring recommendations
-
-### AI Interview Generator
-
-* Generates interview questions based on resume skills
-* Helps candidates prepare for technical interviews
-
-### Recruiter Dashboard
-
-* Create job postings
-* View applicants
-* Manage candidate status
-* ATS-based ranking system
-
----
-
-## 📊 Future Enhancements
-
-* Gemini/OpenAI Integration
-* Resume Improvement Suggestions
-* Real-time Notifications
-* Mock Interview System
-* Email Alerts
-* Advanced Analytics Dashboard
+Access the client application at `http://localhost:5173`.
 
 ---
 
 ## 👨‍💻 Author
 
-**Tejaswi Madastu**
-
-GitHub: https://github.com/Tejaswimadastu
+**Tejaswi Madastu**  
+GitHub: [https://github.com/Tejaswimadastu](https://github.com/Tejaswimadastu)
 
 ---
 
